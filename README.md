@@ -1,32 +1,77 @@
-# credit_default_predictionmodel
-Credit Card Behaviour Score Prediction
+# Credit Card Behaviour Score Prediction
 
-OBJECTIVE
+## 📌 Objective
 
-The project will focus on improving the credit risk management framework of a bank by developing a forward looking Behaviour Score, that is, a classification model that predicts whether a credit card customer will default in the following month.Based on the historical behavioral data of over 30000 customers a binary classification model has to be set up which helps to predict whether a customer will default in the next billing cycle. Such a model would allow the bank to flag potential defaulters in advance, allowing the bank to adjust the credit exposure, trigger early warnings systems and prioritize risk based actions
+The goal of this project is to improve the **credit risk management framework** of a bank by developing a forward-looking **Behaviour Score**—a classification model that predicts whether a credit card customer will default in the following month.
 
-PROJECT WORKFLOW
-1. Data Preprocessing
-Data Cleaning : All the missing values in age column were replaced by mean and datatype changed to int.
+Using historical behavioral data from over **30,000 customers**, a **binary classification model** was developed to help the bank:
 
-3. EDA AND FINANCIAL INSIGHTS
+- Flag potential defaulters in advance
+- Adjust credit exposure proactively
+- Trigger early warning systems
+- Prioritize risk-based actions
 
-Visualisation : Using matlobplit.pyplot and seaborn to generate heatmap,histogram,countplot etc to find correlation between data and influence on default.
+---
 
-Financial insights : The plots and patterns allowed us to understant how some key behavioral variables influence default risk.
+## 🔁 Project Workflow
 
-3.FEATURE ENGINEERING
+### 1. Data Preprocessing
 
-Used some transformation techniques to generate some financially meaningful features like deliquency count,utilisation ratio and max delay.
+- **Missing Value Handling**: All missing values in the `age` column were imputed with the column mean.
+- **Data Type Fixes**: Columns like `age`, `marriage`, `education`, and `sex` were appropriately cast to the correct data types.
 
-5. CLASS IMBALANCE
-Handled using downsampling and class weighting
-7. MODEL TRAINING AND SELECTION
+---
 
-Various classification models like logistic regression,decision tree,xgboost and lightgbm were trained.
-Based on the performance on evaluation metrics, XGBOOST was chosen as it had the best F2_SCORE;
-classification cutoff was set below its default value of 0.5.
+### 2. EDA and Financial Insights
 
-AUTHOR
+#### 📊 Visualizations
 
-Eisa Hasan
+- Used **Matplotlib** and **Seaborn** to create:
+  - **Heatmaps** to analyze correlation
+  - **Histograms** and **Countplots** for distribution and class balance
+
+#### 💡 Financial Insights
+
+- Insights from the plots revealed how customer behavior (like late payments, bill amount patterns, and credit limit) significantly influences **default risk**.
+
+---
+
+### 3. Feature Engineering
+
+Created additional financial features to enhance model learning:
+
+- **Deliquency Count**: Number of months with payment delays
+- **Max Delay**: Longest delay in credit payment
+- **Average Pay Amount**: Mean of all payment amounts across months
+- **Utilization Ratio**: Ratio of average bill amount to credit limit
+
+---
+
+### 4. Handling Class Imbalance
+
+- The dataset showed significant class imbalance.
+- Applied **downsampling** of the majority class and **class weighting** during model training to address this issue.
+
+---
+
+### 5. Model Training and Selection
+
+- Multiple classifiers were trained: **Logistic Regression**, **Decision Tree**, **XGBoost**, and **LightGBM**
+- **XGBoost** was selected based on superior performance, especially its **F2-score** (which emphasizes recall).
+- A custom **classification threshold** (less than 0.5) was chosen to improve sensitivity to defaults.
+
+---
+
+## 🧑‍💻 Author
+
+**Eisa Hasan**  
+
+O.P. Jindal Global University
+
+---
+
+
+---
+
+
+
